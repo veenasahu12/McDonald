@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        h1{
+            height: 80px;
+            width: 100%;
+            /* margin-left: 30px; */
+            background-color: brown;
+            color: #062050;
+            padding-left: 17%;
+            font-size: 70px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        img{
+            width: 100%;
+            height: 460px;
+            /* margin-left: 30px; */
+        }
+        #checkbox{
+            height: 230px;
+            width: 100%;
+            border: 2px solid black;
+            background-color: cornflowerblue;
+            padding-left: 2%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #button{
+            background-color: rgb(82, 4, 4);
+            color: white;
+        }
+        #food{
+          display: flex;
+          flex-wrap: wrap;
+          width: 75%;
+          
+
+        }
+        #foodlist{
+            width: 15%;
+        }
+        .card{
+            height: 250px;
+            width: 30%;
+            border: 7px solid black;
+            margin: auto;
+        }
+        #cont{
+            display:flex;
+            background-image: url('https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d2hpdGUlMjBhZXN0aGV0aWN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');
+        }
+        .pic{
+            height:65%;
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+        }
+.name{
+    font-weight: bold;
+    margin-left: 70px;
+    font-size: 20px;  
+} 
+.ID{
+    font-weight: bold;
+    margin-left: 120px; 
+    font-size: 20px;
+    
+}       
+    </style>
+</head>
+<body>
+    <h1>Welcome To McDonald's</h1>
+    <!-- <img src="https://images.unsplash.com/photo-1617551051479-85ef7428f96e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1jZG9uYWxkc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt=""/> -->
+    <img name="slide" width="100%" height="350px"/>
+    <div id="cont">
+        <div id="foodlist"><form id="checkbox">
+            <h2>Order Food</h2>
+          <input type="checkbox" id="Veg-Burger" name="Veg-Burger" value="Veg-Burger">
+          <label for="Veg-Burger">Veg-Burger</label><br>
+          <input type="checkbox" id="Nonveg-Burger" name="Nonveg-Burger" value="Nonveg-Burger">
+          <label for="Nonveg-Burger">Nonveg-Burger</label><br>
+          <input type="checkbox" id="French-Fries" name="French Fries" value="French-Fries">
+          <label for="French Fries">French Fries</label><br>
+          <input type="checkbox" id="Coca-cola" name="Coca-cola" value="Coca-cola">
+          <label for="Coca-cola">Coca-cola</label><br>
+          <input type="checkbox" id="Ice-Cream" name="Ice-Cream" value="Ice-Cream">
+          <label for="Ice-Cream">Ice-Cream</label><br><br>
+          <input id="button" type="submit" value="Submit">
+        </form></div>
+        <div id="food"></div>
+    </div>
+ 
+
+</body>
+</html>
+<script>
+var i = 0;
+var image = [];
+var time = 2000;
+
+// image list
+image[0] = "https://images.unsplash.com/photo-1547494784-d143dea885b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG1jZG9uYWxkcyUyMGZhc3QlMjBmb29kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+image[1] = "https://images.unsplash.com/photo-1617551051479-85ef7428f96e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1jZG9uYWxkc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" 
+image[2] = "https://images.unsplash.com/photo-1610614819513-58e34989848b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGZhc3QlMjBmb29kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+
+// change image
+function changeImg(){
+    document.slide.src = image[i];
+    if(i < image.length-1){
+        i++;
+    }
+    else{
+        i = 0;
+    }
+    setTimeout("changeImg()",2000 );
+}
+window.onload=changeImg
+
+
+// promise
+var data = [
+{
+      image:
+        "https://media.istockphoto.com/photos/cheese-burger-with-bacon-on-black-dark-background-picture-id1295796202?b=1&k=20&m=1295796202&s=170667a&w=0&h=jqUTXzROq4_Sw4V61-xtn0VDQtpZOXzKUgPLlZx3qs4=",
+      name: "Veg-Burger",
+      ID : 1,
+    },
+    {
+      image:
+        "https://media.istockphoto.com/photos/cheeseburger-with-tomato-and-lettuce-on-wooden-board-picture-id1309352410?b=1&k=20&m=1309352410&s=170667a&w=0&h=YduYl7Us5MSrw1EFSCxR9zDRLnEFa_O608NdqhHlSyM=",
+      name: "Nonveg-Burger",
+     ID : 2,
+    },
+    {
+      image:
+        "https://media.istockphoto.com/photos/diverse-keto-dishes-picture-id1280158821?b=1&k=20&m=1280158821&s=170667a&w=0&h=ibwKxBzWcygq6NMKO5FTD-3ljLvwM8E1WVevw7XSmlk=",
+      name: "French-Fries",
+      ID : 3,
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1567705323043-d0e489de300d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y29jYWNvbGF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        name: "Coca-cola",
+        ID : 4,
+    },
+    {
+      image:
+        "https://media.istockphoto.com/photos/assorted-ice-cream-picture-id682136912?k=20&m=682136912&s=612x612&w=0&h=7I9_w6TdCALK3n93CEbuGhTz8jjDqOvDGjjEkz9t8Vo=",
+        name: "Ice-Cream",
+        ID : 5,
+    },
+]
+
+document.querySelector("form").addEventListener("submit",orderfood);
+function orderfood(event){
+    let queue = [];
+    event.preventDefault()
+    // console.log("hello world");
+
+    var VegBurger = document.querySelector("#Veg-Burger").checked;
+    var NonvegBurger = document.querySelector("#Nonveg-Burger").checked;
+    var FrenchFries = document.querySelector("#French-Fries").checked;
+    var Cocacola = document.querySelector("#Coca-cola").checked;
+    var Icecream = document.querySelector("#Ice-Cream").checked;
+
+    if(VegBurger){
+        queue.push(data[0])
+    }
+    if(NonvegBurger){
+        queue.push(data[1])
+    }
+    if(FrenchFries){
+        queue.push(data[2])
+    }
+    if(Cocacola){
+        queue.push(data[3])
+    }
+    if(Icecream){
+        queue.push(data[4])
+    }
+    if(queue.length > 0){
+        var x = Math.floor(Math.random() * 25);
+        alert(x +" is your order number")
+    }
+    else{
+        alert("your order can't be empty")
+    }
+    // console.log(queue)
+    let orderpromise = new Promise(function(resolve,reject){
+      setTimeout(function(){
+          resolve(queue)
+      },1000)
+    //   reject("please select any food")
+    }).then(function(res){
+        console.log(res);
+        displayorder(res)
+    })
+    .catch(function(err){
+        console.log("err:",err);
+    })
+}
+function displayorder(data){
+document.querySelector("#food").textContent = "";
+data.map (function(food){
+var card = document.createElement("div");
+card.setAttribute("class","card");
+
+var image = document.createElement("img");
+image.setAttribute("src",food.image);
+image.setAttribute("class","pic");
+
+var name = document.createElement("p");
+name.innerHTML = "Name : "+food.name;
+name.setAttribute("class","name");
+
+var ID = document.createElement("p");
+ID.innerHTML = "ID : "+food.ID;
+ID.setAttribute("class","ID");
+card.append(image,name,ID);
+document.querySelector("#food").append(card)
+})
+}
+</script>
